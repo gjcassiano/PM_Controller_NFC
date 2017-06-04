@@ -12,12 +12,15 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class AssignPage extends Activity implements NfcAdapter.CreateNdefMessageCallback{
+public class AssignPage extends AppCompatActivity implements NfcAdapter.CreateNdefMessageCallback{
     private TextView barcodeSelected;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +29,18 @@ public class AssignPage extends Activity implements NfcAdapter.CreateNdefMessage
         barcodeSelected =(TextView)findViewById(R.id.barcode);
         barcodeSelected.setText(getIntent().getExtras().getString("barcode").toString());
 
-        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.floating_btn);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{
                 finish();
             }
-        });
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void showMessageInSnackbox(String message){

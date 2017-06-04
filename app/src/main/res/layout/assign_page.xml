@@ -5,49 +5,38 @@
     android:id="@+id/assign_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animationCache="false"
     android:orientation="vertical"
     android:visibility="visible"
     tools:context="com.example.unknow.myapplication.AssignPage">
+
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinateLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </android.support.design.widget.CoordinatorLayout>
+
     <TextView
         android:id="@+id/barcode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:text="teste"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        android:textSize="40dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:textSize="40dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/barcode"
+        android:layout_centerHorizontal="true"
         android:text="Aproxime-se do outro device"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="26dp"
-        android:layout_below="@+id/barcode"
-        android:layout_centerHorizontal="true" />
+        android:textSize="26dp" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floating_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="12dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:clickable="true"
-        android:longClickable="false"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
-        app:backgroundTint="@color/colorPrimary" />
 
 </RelativeLayout>

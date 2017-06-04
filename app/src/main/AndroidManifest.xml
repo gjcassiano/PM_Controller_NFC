@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.unknow.myapplication">
-    <uses-permission android:name="android.permission.NFC"/>
+
+    <uses-permission android:name="android.permission.NFC" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/nfc_icon"
@@ -15,15 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="application/barcode_received"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/barcode_received" />
             </intent-filter>
         </activity>
-        <activity android:name=".AssignPage"
-            android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".AssignPage"
+            android:label="Device">
         </activity>
-        <activity android:name=".LoadingPage"
+        <activity
+            android:name=".LoadingPage"
             android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>
