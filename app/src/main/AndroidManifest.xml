@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.unknow.myapplication">
+    <uses-permission android:name="android.permission.NFC"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/nfc_icon"
+        android:label="PM Controller"
+        android:roundIcon="@mipmap/nfc_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="application/barcode_received"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".AssignPage"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".LoadingPage"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
+    </application>
+
+</manifest>
